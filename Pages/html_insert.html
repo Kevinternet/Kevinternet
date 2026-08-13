@@ -1,0 +1,784 @@
+
+ <!-- placeholder comment -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Placeholder Text</h1>
+</header>
+
+<nav>
+  <a href="/index.html" target="_blank" class="button">Home</a>
+  <a href="/Pages/NeopetHub/NeopetHomepage.html" class="button">Neopet Hub</a>
+  <a href="/Pages/GameRoomIndex/GameRoom.html" class="button">Game Room</a>
+  <a href="/Pages/pagetemplate/pageTemplateOne.html" class="button">Page Builder</a>
+</nav>
+
+<main>
+  <div class="placeholder"></div>
+  <div class="placeholder"></div> 
+   <div class="placeholder"></div>
+     <div class="text-block"></div>
+  <div class="text-block"></div>
+  <div class="placeholder"></div>
+    <div class="placeholder"></div>
+      <div class="text-block"></div>
+  <div class="text-block"></div>
+
+
+</main>
+
+<aside>
+  <div class="placeholder"></div>
+    <div class="placeholder"></div>
+  <div class="placeholder"></div>
+
+</aside>
+
+<footer>
+  <div class="placeholder"></div>
+</footer>
+
+  <script src="script.js"></script>
+  </script>
+</body>
+</html>
+  <!--<h1> header </h1> -->
+<!-- </header>
+<nav>
+       <a href="/Pages/FunctionsPageIndex/Functions.html" target="_blank" class="button">JavaScript</a>
+    <a href="/Pages/NeopetHub/NeopetHomepage.html" class="button">Neopet Hub</a>
+    <a href="/Pages/GameRoomIndex/GameRoom.html" class="button">Game Room</a>
+    <a href="/Pages/pagetemplate/pageTemplateOne.html" class="button">Page Builder</a> 
+
+</nav>
+<aside>
+</aside>
+<main>
+
+</main> -->
+
+
+
+
+css= for grid
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(212, 206, 197);
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    "nav    main   aside"
+    "footer footer footer";
+  height: 100vh;
+}
+
+
+
+header {
+  grid-area: header;
+  background: rgba(14, 14, 14, 0.4);
+  padding: 10px; 
+  display: flex;
+  justify-content: center;
+  gap: 10px; 
+}
+
+nav {
+  grid-area: nav;
+  background: rgba(0, 255, 0, 0.4);
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 10px;
+}
+
+
+
+main {
+  grid-area: main;
+  background: rgba(255, 17, 0, 0.4); 
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+}
+
+
+aside {
+  display: grid;
+  background-color: rgba(255, 255, 0, 0.555);
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));  gap: 12px;
+  padding: 10px;
+}
+
+
+footer {
+  grid-area: footer;
+  background: rgba(10, 10, 10, 0.4);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.placeholder {
+  height: 40px;
+  width: 40px;
+  background-color: beige;
+  border: 1px dashed black;
+}
+.text-block {
+  height: 12px;
+  width: 80%;
+  background: rgba(255,255,255,0.3);
+  border: 1px dashed black;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  body {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "nav    main"
+      "aside  aside"
+      "footer footer";
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+  }
+}
+
+css for flex
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(186, 184, 181);
+}
+
+header {
+  background-color: red;
+}
+
+nav {
+  background-color: teal;
+}
+
+main {
+  background-color: rgb(0, 157, 255);
+}
+
+aside {
+  background-color: pink;
+}
+
+footer {
+  background-color: rgb(76, 76, 76);
+}
+
+.placeholder {
+  height: 50px;
+  width: 50px;
+  background-color: aliceblue;
+  border: 2px dashed black;
+}
+
+
+.text-block {
+  height: 40px;
+  width: 80%;
+  background-color: rgb(172, 170, 169);
+  border: 2px dashed black;
+}
+
+
+
+
+<!-- end comment -->
+
+js=
+
+<!-- really...okay dont break anything  -->
+
+
+
+<!-- option 1 -->
+<!-- html = 
+    <div class="box box1"><button id="loserbutton" onclick="alert('you lose')">Click Me</button></div>
+    <div class="box box2"><a href="Game2/dungeoncrawlersimplecaves.html">dungeon crawler</a></div>
+    <div class="box box3" ><a href="/Pages/GameRoomIndex/Game3/GameThree.html">Game 3</a></div>
+        <div class="box box4"><a href="/Pages/GameRoomIndex/Game4/FourFun.html">Game 4</a></div>
+    <div class="box box5"><img src="images/heartIcon.png" class="heartIcon scale-up-center"></div>
+
+    css =  
+
+.box {
+  width: 30%;                    /* Each box takes 30% of the row */
+  height: 120px;                 /* Fixed height */
+  display: flex;                 /* Allows centering text inside */
+  align-items: center;           /* Vertical centering */
+  justify-content: center;       /* Horizontal centering */
+  color: rgb(0, 0, 0);                  /* Text color */
+  font-weight: bold;             /* Bold text */
+  border-radius: 8px;            /* Rounded corners */
+}
+
+.box1 {
+  background-color: rgb(255, 0, 0);
+}
+
+.box2 {
+  background-color: rgb(246, 255, 0);
+} 
+
+.box3 {
+  background-color: rgb(38, 0, 255);
+}
+.box4 {
+  background-color: rgb(0, 225, 255);
+}
+
+.box5 {
+  background-color: rgb(184, 162, 1);
+} 
+
+.box6 {
+  background-color: rgb(255, 0, 238);
+} -->
+<!-- end -->
+ <!-- version control -->
+
+
+ <!-- Rainbow Boxes alpha0.1 -->
+  <!-- html =               <section class="" id="section_template_2">
+                <p id="Rainbow_Label">Rainbow Boxes Option</p>
+                    <div class="box box1"><button id="loserbutton" onclick="alert('you lose')">Click Me</button></div>
+        <div class="box box2"><a href="Game2/dungeoncrawlersimplecaves.html">dungeon crawler</a></div>
+        <div class="box box3" ><a href="/Pages/GameRoomIndex/Game3/GameThree.html">Game 3</a></div>
+            <div class="box box4"><a href="/Pages/GameRoomIndex/Game4/FourFun.html">Game 4</a></div>
+        <div class="box box5"><img src="images/heartIcon.png" class="heartIcon scale-up-center"></div>
+                <div class="box box3" id="">damn</div>
+                <div class="box box3" id=""></div>
+                <div class="box box3" id=""></div>
+                <div class="box box3" id=""></div>
+                <div class="box box3" id=""></div>
+                <div class="box box3" id=""></div>
+             
+              </section>
+
+
+              css = 
+              
+section {
+  display: flex;
+  /* flex-direction: ; */
+  flex-wrap: wrap;
+}
+
+.box {
+  flex-grow: 1;
+  min-width: 150px; 
+  max-width: 300px;                   /* Each box takes 30% of the row */
+  height: 120px;                 /* Fixed height */
+  display: flex;                 /* Allows centering text inside */
+  align-items: center;           /* Vertical centering */
+  justify-content: center;       /* Horizontal centering */
+  color: rgb(0, 0, 0);                  /* Text color */
+  font-weight: bold;             /* Bold text */
+  border-radius: 8px;            /* Rounded corners */
+}
+
+.box1 {
+  background-color: rgb(255, 0, 0);
+}
+
+.box2 {
+  background-color: rgb(246, 255, 0);
+} 
+
+.box3 {
+  background-color: rgb(38, 0, 255);
+}
+.box4 {
+  background-color: rgb(0, 225, 255);
+  flex-grow: 
+}
+
+.box5 {
+  background-color: rgb(184, 162, 1);
+} 
+
+.box6 {
+  background-color: rgb(255, 0, 238);
+}
+
+#Rainbow_Label {
+font-size: 40px;
+text-align: center;
+width: 100%;
+} -->
+
+<!-- end -->
+ <!-- Rainbow v0.2 -->
+<!-- html =
+
+              
+              <section class="" id="section_template_2">
+                <p id="Rainbow_Label">Rainbow Boxes Option</p>
+                    <div class="box box1"><nav>content</nav> 
+                      <details>
+                        
+                        just build ouot a nav bar from here. easy<button id="loserbutton" onclick="alert('you lose')">Click Me</button></div>
+                      </details>
+        <div class="box box2"><aside>
+
+          <a href="Game2/dungeoncrawlersimplecaves.html">dungeon crawler</a></div>
+        </aside>
+        <main>
+
+          <div class="box box3 bodybox" ><a href="/Pages/GameRoomIndex/Game3/GameThree.html">Game 3</a></div>
+          <div class="box box4 bodybox"><a href="/Pages/GameRoomIndex/Game4/FourFun.html">Game 4</a></div>
+          <div class="box box5 bodybox"><img src="images/heartIcon.png" class="heartIcon scale-up-center"></div>
+          <div class="box box6 bodybox"><img src="images/heartIcon.png" class="heartIcon scale-up-center"></div>
+          <div class="box box7 bodybox"><img src="images/heartIcon.png" class="heartIcon scale-up-center"></div>
+          <div class="box box8 bodybox"><img src="images/heartIcon.png" class="heartIcon scale-up-center"></div>
+          <div class="box box9 bodybox"><img src="images/heartIcon.png" class="heartIcon scale-up-center"></div>
+          <div class="box box10 bodybox"><img src="images/heartIcon.png" class="heartIcon scale-up-center"></div>
+          <div class="box box11 bodybox"><img src="images/heartIcon.png" class="heartIcon scale-up-center"></div>
+        </main>
+                <div class="box box3" id="bully_box">me</div>
+                <div class="box box3" id="">proof im usebleor getting canned</div>
+                <div class="box box10" id="">
+css=main {
+  background-color: #892be28e;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  padding: 15px;
+
+
+}
+
+
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+.bodybox {
+  background-color: black;
+  min-height: 300px;
+ min-width: 300px;
+
+}
+.box1 {
+  background-color: rgb(255, 0, 0);
+  width: 100%;
+  display: flex;
+ 
+
+}
+
+.box2 {
+  background-color: rgb(246, 255, 0);
+
+} 
+
+.box3 {
+  background-color: rgb(38, 0, 255);
+}
+.box4 {
+  background-color: rgb(0, 225, 255);
+
+}
+
+.box5 {
+  background-color: rgb(184, 162, 1);
+} 
+
+.box6 {
+  background-color: rgb(255, 0, 238);
+}
+
+#Rainbow_Label {
+font-size: 40px;
+text-align: center;
+width: 100%;
+}
+
+#bully_box {
+  min-width: 80%;
+  justify-content: flex-end;
+} -->
+
+
+
+
+<!--  hold this 
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+    <link rel="stylesheet" href="/Pages/FunctionsPageIndex/stylehackerera.css">
+  </head>
+  <body>
+    <div class="wrapper" id="topdownorgo">
+    <header>
+      <h1>Function Practice</h1>
+      <h1>Initializing...</h1>
+      <nav>
+        <a href="/index.html"><p class="hackerstyle">HOME</p></a>
+        <a href="/Pages/NeopetHub/NeopetHomepage.html"><p class="hackerstyle">Classified PROJECT</p></a>
+        <a href="/Pages/GameRoomIndex/GameRoom.html"><p class="hackerstyle">Gameroom</p></a>
+        <a href=""></a><a href="/Pages/pagetemplate/pageTemplateOne.html"><p class="hackerstyle">Layout Practice</p></a>
+      </nav>
+    </header>
+  </div>
+  <br>
+  <main>
+    <aside>
+      <div id="iframeWrapper">    
+        <!-- iFrame -->
+        
+        <h1 style="color: green;">Function Practice — Iframe Version</h1>
+        
+        <iframe src="sandbox.html" width="500" height="300" style="border:2px solid rgb(255, 255, 255);"></iframe>
+        
+        <p class="button">This iframe is running its own mini function page.</p>
+        
+      </div>
+      
+    </aside>
+    <!-- row 1 -->
+
+<div class="rowOne rowWrapper">
+
+
+  <!-- experiment 1 -->
+  
+  <section id="experiment1">
+    <!-- function A -->
+    <h2>Experiment 1: Click Toggle</h2> 
+    <button id="toggleBtn" class="button">Click me</button>
+    <p id="toggleOutput"></p>
+<!-- function B -->
+
+ 
+  </section>
+  
+  <!-- experiment 2 -->
+  
+  
+  <section id="experiment2"> 
+    <h2>Experiment 2: Counter</h2> 
+    <button id="countBtn" class="button">Add 1</button>
+    <p id="countOutput">0</p>
+  </section>
+  
+</div>
+
+<!-- row 2 -->
+
+<div class="rowTwo rowWrapper">
+
+  
+  
+  <!-- experiment 3 -->
+  
+  
+  <section id="experiment3">
+    <h2>Experiment 3: Random Color Box</h2> 
+    <div id="colorBox"></div> 
+  </section>
+  
+  <!-- Experiment 4 -->
+  <section id="experiment4">
+    
+    <h2>Experiment 4: Console Logs and Notification Bubbles</h2>
+    <button class="button" id="runTests">Run Function Tests</button>
+    <h3>Please open the console:</h3>
+    <div id="outputBoxSilly">
+      <p>
+        Run my Test For Changes to this that or not<br>
+      </p>   
+    </div>
+  </section>
+  
+  
+  <!-- Experiment 5 -->
+  
+  <section  id="experiment5">
+    <h2>Experiment 5: Update Text</h2>
+    <button class="button" id="changeFive">Change Text</button>
+    <p id="msgFive">Original</p>
+  </section>
+  
+</div>
+  <!-- placeholder next experiment -->
+  <!-- final row -->
+  <!-- Final Experiment   -->
+  
+  <section id="finalExperiment">
+      <h2>Final Experiment: Tile Creation + Log Events</h2>
+     
+      <div id="logArea"></div>
+      <button class="button" id="logClear">Clear Log</button>
+    </section>
+    
+  </main>
+    <!-- end -->
+    <!-- end -->
+    
+<!-- reset all button below -->
+
+<button id="resetAll" class="button">RESET SYSTEM</button>
+
+<!-- page end  -->
+
+<!-- script link below -->
+
+<script src="Functions.js"></script>
+
+<!-- raw script option below -->
+
+<script>
+//helper below//
+
+// function $(element) {
+//   return document.querySelector(element);
+// };
+
+// write that function //
+
+
+
+
+</script>
+
+  </body>
+</html>
+
+
+hold this 
+
+ end comment -->
+
+ body {
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  color: green;
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+nav {
+  background-color: #000000;
+  display: flex;
+  padding: 0;
+  margin: 0; 
+  
+}
+nav a {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+aside {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+  gap: 10px;
+  border: 4px solid green;
+}
+
+section {
+  background-color: #111111;
+  color: Green;
+  padding: 20px;
+  border: 3px solid green;
+  padding: 15px;
+  gap: 10px;
+  /* min-height: 500px;
+  max-height: 500px;
+  overflow: auto; */
+ 
+  }
+
+.rowWrapper {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.rowWrapper > * {
+  flex: 1;
+  align-self: flex-start;
+  width: 85%;
+}
+.rowOne section {
+   min-height: 500px;
+   }
+.rowTwo section {
+  min-height: 300px;
+   max-height: 300px;
+   overflow-y: auto;    
+  }
+#finalExperiment {
+   min-height: 300px;
+   max-height: 300px;
+   overflow-y: auto;
+   }
+
+
+.button {
+
+  padding: 5px;
+  background-color: #000000;
+  color: #00ff1a;
+  border: 2xp solid green;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.hackerstyle {
+  color: rgb(0, 255, 0);
+  padding: 15px;
+  border: 2px solid rgb(0, 255, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.grid { 
+  display: grid;
+   grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+     margin-top: 12px;
+     }
+     
+.tile { 
+  width:100px;
+  height:100px;
+  background:#579696;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer; 
+  transition: transform 0.15s ease, background 0.15s ease;
+      }
+
+.tile.selected { 
+  background:rgb(9, 9, 204); 
+  border:2px solid #e2e0e0; 
+  transform: scale(1.1);
+}
+
+  .reset-flash {
+  animation: flash 0.4s linear;
+}
+
+@keyframes flash {
+  0% { background: #0f0; color: black; }
+  100% { background: #111; color: #0f0; }
+}
+
+
+#topdownorgo {
+  background-color: rgb(0, 0, 0);
+  color: rgb(0, 252, 0);
+  min-width: 500px;
+  border: 2px solid rgb(0, 255, 0);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#iframeWrapper {
+  margin-right: 100px;
+  padding: 20px;
+}
+
+#outputBoxSilly {
+    background: #111;
+    color: #0f0;
+    padding: 10px;
+    margin-top: 20px;
+    font-family: monospace;
+    border: 2px solid #0f0;
+}
+
+
+#colorBox {
+  width: 100px;
+  height: 100px;
+  background: lightgray;
+  border: 4px solid #00ff1a;
+}
+
+#logArea { 
+  margin-top:12px;
+  margin-bottom: 15px; 
+  padding: 10px;
+  font-family:monospace;
+   white-space:pre-wrap; 
+   border: 3px solid #00ff1a;
+   background-color: #000000;
+   color: #00ff1a;
+   width: 475px;
+  }
+
+  #finalExperiment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+
+

@@ -1,0 +1,23 @@
+.tool-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 1rem auto;
+  cursor: pointer;
+}
+
+.tool-title {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.tool-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.tool-card.active .tool-content {
+  max-height: 200px; /* enough to show content */
+}

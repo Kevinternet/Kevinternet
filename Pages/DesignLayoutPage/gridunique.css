@@ -1,0 +1,144 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(212, 206, 197);
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  height: 100vh;
+}
+
+/* HEADER */
+header {
+  grid-column: 1 / 8;
+  grid-row: 1 / 2;
+  background: rgba(14, 14, 14, 0.4);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* NAV */
+nav {
+  grid-column: 8 / 11;
+  grid-row: 1 / 2;
+  background: rgba(0, 255, 0, 0.634);
+  padding: 10px;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* MAIN */
+main {
+  grid-column: 2 / 11;
+  grid-row: 2 / 10;
+  background: rgba(255, 17, 0, 0.4);
+  padding: 10px;
+  gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+/* ASIDE */
+aside {
+  grid-column: 1 / 2;
+  grid-row: 2 / 10;
+  background-color: rgba(255, 255, 0, 0.555);
+  padding: 10px;
+  display: grid;
+  gap: 12px;
+}
+
+/* FOOTER */
+footer {
+  grid-column: 1 / 11;
+  grid-row: 10 / 11;
+  background: rgba(10, 10, 10, 0.4);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  section {
+    overflow-y: auto;
+
+    
+  }
+
+  .alpha {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .exDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    background-color: gray;
+    border: 2px solid black;
+    margin: 10px;
+  }
+
+  #exDivOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+
+  #exDivTwo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #exDivFour {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+
+/* PLACEHOLDERS */
+.placeholder {
+  height: 40px;
+  width: 40px;
+  background-color: beige;
+  border: 1px dashed black;
+}
+
+.text-block {
+  height: 12px;
+  width: 80%;
+  background: rgba(255,255,255,0.3);
+  border: 1px dashed black;
+  margin-bottom: 8px;
+}
+
+#exDivFive {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#exDivFinal {
+height: 100%;
+overflow-y: scroll;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+}

@@ -1,0 +1,283 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  background-color: rgb(212, 206, 197);
+  height: 100vh;
+  background-color: #000000;
+  color: green;
+  font-family: sans-serif;
+  padding: 0px;
+}
+
+
+
+/* HEADER */
+header {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* NAV */
+nav {
+
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: #000000;
+  color: green;
+  padding: 10px;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+/* MAIN */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  background: rgb(0, 0, 0);
+  padding: 0px;
+  gap: 0px;
+
+}
+
+
+/* FOOTER */
+footer {
+
+  background: rgba(10, 10, 10, 0.4);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  section {
+    /* overflow-y: auto; */
+    background-color: #ffffff00;
+    border: 2px solid rgb(0, 255, 64);
+
+
+    
+  }
+  
+  .exDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(16, 16, 16);
+    margin: 0px;
+  }
+
+  #sOne {
+    flex-grow: 1;
+    width: 100%;
+       display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-auto-rows: auto;
+    box-sizing: border-box;
+    padding: 20px;
+    gap: 10px;
+  }
+
+  #sTwo {
+    width: 50%;
+    background-color: black;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+  }
+
+  #sThree {
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+  }
+
+  #hihihi {
+    display: flex;
+  }
+
+  
+
+  #exDivOne {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+
+  #exDivTwo {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+
+  #exDivThree {
+
+    display: flex;
+    justify-content: center;  
+  }
+
+
+  #exDivFour {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  
+  #exDivFive {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #exDivSix {
+
+  }
+
+  #exDivSeven {
+
+  }
+
+  
+  #exDivEight {
+
+  }
+
+
+.Beta h1 {
+  font-size: 25px;
+  margin-top: 0;
+}
+
+/* PLACEHOLDERS */
+.placeholder {
+  height: 40px;
+  width: 40px;
+  background-color: rgba(28, 197, 2, 0.771);
+}
+
+.text-block {
+  height: 12px;
+  width: 80%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px dashed rgb(30, 225, 0);
+  margin-bottom: 8px;
+}
+
+
+#exDivFinal {
+height: 400px;
+overflow-y: scroll;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+background-color: #000000;
+}
+/* -_____________________________________________________________________________________ */
+
+
+
+
+.button {
+
+  padding: 5px;
+  background-color: #000000;
+  color: #00ff1a;
+  border: 2xp solid green;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+
+#tileGrid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 5px;
+}
+
+
+
+
+.tile { 
+  width: 20px;
+  height: 20px;
+  background:#579696;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer; 
+  transition: transform 0.15s ease, background 0.15s ease;
+      }
+
+.tile.selected { 
+  background:rgb(9, 9, 204); 
+  border:2px solid #e2e0e0; 
+  transform: scale(1.1);
+}
+
+  .reset-flash {
+  animation: flash 0.4s linear;
+}
+
+@keyframes flash {
+  0% { background: #0f0; color: black; }
+  100% { background: #111; color: #0f0; }
+}
+
+
+
+
+#outputBoxSilly {
+    background: #111;
+    color: #0f0;
+    padding: 10px;
+    margin-top: 20px;
+    font-family: monospace;
+    border: 2px solid #0f0;
+}
+
+
+#colorBox {
+  width: 40px;
+  height: 40px;
+  background: lightgray;
+  border: 4px solid #ffffff;
+}
+
+#logArea { 
+  margin-top:12px;
+  margin-bottom: 15px; 
+  padding: 10px;
+  font-family:monospace;
+   white-space:pre-wrap; 
+   border: 3px solid #00ff1a;
+   background-color: #000000;
+   color: #00ff1a;
+   width: 475px;
+  }
+
+
+#iframeWrapper {
+  margin-top: 0;
+}

@@ -1,0 +1,42 @@
+.colorBox {
+  min-width: 100px;
+  min-height: 100px;
+  background: rgb(136, 31, 31);
+  
+}
+
+
+#experiment3 {
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(5, 100px);
+  grid-template-rows: auto;
+
+ 
+  /* display: flex;
+  flex-wrap: wrap;
+  align-content: center; */
+  gap: 10px;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-auto-rows: auto;
+}
+/* .item{
+  padding: 2em;
+  background-color: rgb(84, 145, 145);
+  color: azure;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 8px;
+  font-size: 2rem;
+} */
+
+.item.selected {
+  background-color: yellow;
+  color: black; /* optional */
+  border: 2px solid black; /* optional */
+}

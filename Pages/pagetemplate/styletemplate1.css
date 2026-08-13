@@ -1,0 +1,127 @@
+body {
+  background-color: blanchedalmond;
+  width: 100%;
+  /* display: flex; */
+
+  /* flex-direction: column; */
+  /* gap: 15px; */
+  
+}
+section {
+  /* flex-grow: 1; */
+  min-width: 100px;
+  /* padding: 20px; */
+  border: 10px solid #9b4141;
+  
+}
+
+h1 {
+  text-align: center;
+  width: 100%;
+}
+h2 {
+  text-align: center;
+}
+/* .tiles {
+  height: 100px;
+  width: 100px;
+  background-color: chartreuse;
+} */
+
+.empty {
+  display: flex;
+}
+
+/* below was moved to green style page from here to.../
+
+/* .section_type_alpha {
+  background-color: rgb(2, 56, 7);
+  display: flex;
+  flex-wrap: wrap;
+  
+} */
+ /* #row_1_wrap {
+  background-color: rgba(0, 0, 0, 0.521);
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+ */
+
+ /* .alpha {
+   border: 5px double rgb(179, 179, 179);
+   
+   
+.abox {
+  background-color: black;
+  color: aliceblue;
+  height: 100px;
+  width: 100px;
+}
+
+.bbox {
+  background-color: aqua;
+  height: 100px;
+  width: auto;
+}
+
+.cbox {
+  background-color: aliceblue;
+  height: auto;
+  width: 100px;
+}
+
+.dbox {
+  background-color: blueviolet;
+  height: 200px;
+  min-width: 200px;
+  /* flex-grow: 1; */
+
+  /* ...here end */
+/* 
+.section_type_beta {
+  background-color: blue;
+} */
+
+
+
+/* moved these helpers to rainbow boxees style sheet from here...
+.box {
+  width: 30%;                    /* Each box takes 30% of the row 
+  height: 120px;                 /* Fixed height 
+  display: flex;                 /* Allows centering text inside 
+  align-items: center;           /* Vertical centering 
+  justify-content: center;       /* Horizontal centering 
+  color: rgb(0, 0, 0);                  /* Text color 
+  font-weight: bold;             /* Bold text 
+  border-radius: 8px;            /* Rounded corners 
+}
+
+.box1 {
+  background-color: rgb(255, 0, 0);
+}
+
+.box2 {
+  background-color: rgb(246, 255, 0);
+} 
+
+.box3 {
+  background-color: rgb(38, 0, 255);
+}
+.box4 {
+  background-color: rgb(0, 225, 255);
+}
+
+.box5 {
+  background-color: rgb(184, 162, 1);
+} 
+
+.box6 {
+  background-color: rgb(255, 0, 238);
+}
+
+#Rainbow_Label {
+font-size: 40px;
+text-align: center;
+} 
+...to here end*/

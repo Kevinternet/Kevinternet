@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blank Page</title>
+  <link rel="stylesheet" href="styleplaceholdername.css">
+</head>
+
+<body>
+
+<header class="header">
+  <h1>Site Title</h1>
+  <button id="toggleSidebar">Toggle Sidebar</button>
+  <nav class="nav">
+    <a href="/index.html">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="herosection">
+
+  <div id="hwrapone">
+    <h2>Welcome to the Site</h2>
+
+    <div id="buttons">
+      <button class="btn">A</button>
+      <button class="btn">B</button>
+    </div>
+
+    <p>This is a generic hero section.</p>
+
+    <div id="panel">
+      <button class="save">Save</button>
+      <button class="delete">Delete</button>
+      <button class="edit">Edit</button>
+    </div>
+  </div>
+
+  <div id="hwraptwo">
+
+    <!-- FORM AREA (fixed: no duplicate IDs, no nesting) -->
+    <div id="formArea">
+      <input class="field" placeholder="Trainer Name">
+      <input class="field" placeholder="Favorite Pokémon">
+      <input class="field" placeholder="Region">
+      <button id="addField">Add Field</button>
+
+      <input class="field" placeholder="Type something">
+      <input class="field" placeholder="Another field">
+    </div>
+
+    <p id="output"></p>
+
+  </div>
+
+</section>
+
+<main class="main">
+
+  <div class="content">
+    <h2>Main Content</h2>
+    <p>Your page content goes here.</p>
+
+    <button id="addPokemon">Add Pokémon</button>
+
+    <ul id="list">
+      <li class="item">Squirtle</li>
+      <li class="item">Bulbasaur</li>
+      <li class="item">Charmander</li>
+    </ul>
+
+    <p id="selectedDisplay">Selected Pokémon: none</p>
+
+    <button id="addPanel">Add Panel</button>
+
+    <div class="content" id="contentArea"></div>
+
+    <div id="trainerDashboard">
+      <h3>Trainer Dashboard</h3>
+      <p id="selectedDisplay2">Selected Pokémon: none</p>
+      <button id="removePokemon">Remove Selected</button>
+      <input id="renamePokemon" placeholder="Rename selected Pokémon">
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <h3>Sidebar</h3>
+    <p>Extra info, links, widgets, etc.</p>
+  </aside>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 Generic Page</p>
+</footer>
+
+<script src="genericscript.js"></script>
+</body>
+</html>

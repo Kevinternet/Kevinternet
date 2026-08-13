@@ -1,0 +1,372 @@
+   /* GLOBAL RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #707070;
+      font-family: Arial, sans-serif;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #4b4b4b;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    /* NAVIGATION */
+    nav {
+      background-color: #1a1a1a;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      background-color: #4b4b4b;
+      padding: 10px 15px;
+      border-radius: 5px;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.2s, transform 0.2s;      
+    }
+
+    nav a:hover {
+      background-color: #444;
+      transform: translateY(-2px);
+    }
+
+    /* MAIN LAYOUT */
+    #contentWrap {
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      margin: 20px auto;
+      gap: 20px;
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    aside {
+      width: 200px;
+      background-color: #4b5250;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    /* SECTION CARDS */
+    section {
+      background-color: #c5c5c5;
+      color: #000;
+      padding: 15px;
+      border-radius: 10px;
+      min-height: 200px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      
+    }
+
+#colorMixer h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(
+    145deg,
+    red,
+    orange,
+    rgb(255, 66, 246),
+    rgb(55, 158, 255),
+    rgb(16, 250, 153),
+    indigo,
+    violet
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+
+section h2 {
+  background-color: #2b2626;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+
+}
+.hidden { display: none; }
+
+
+
+    /* FEED MESSAGES */
+    .normal { color: #eee; }
+    .warning { color: #9e0404; }
+    .success { color: #00912b; }
+
+    /* FOOTER */
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      text-align: center;
+      background-color: #000;
+      color: white;
+    }
+    .tile {
+  width: 60px;
+  height: 60px;
+  background: #ccc;
+  margin: 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.selected {
+  background: gold;
+}
+
+h3 {
+  font-size: 5px;
+}
+
+.appendLiItem {
+  padding: 10px;
+}
+
+#appendList {
+  margin-top: 5px;
+  margin-left: 20px;
+  background-color: #4b4b4b;
+  width: 175px;
+  overflow-x: wrap;
+}
+
+.buttondiv {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+
+#eightballImage {
+  height: 350px;
+  width: 350px;
+  padding-right: 30px;
+}
+
+#eightballimgdiv {
+  position: relative;
+
+}
+
+.eightballHeader {
+  background-color: #560367bf;
+  border: 2px solid white;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: oblique;
+}
+
+#messageField {
+  position: absolute;
+    color: rgba(255, 255, 255, 0.695); 
+  top: 50%;
+  left: 50%;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  pointer-events: none;
+
+  /* fade */
+  transition: opacity 0.4s ease;
+  opacity: 1;
+}
+
+
+/* Shake animation */
+@keyframes shake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-5px, 2px) rotate(-2deg); }
+  40% { transform: translate(4px, -3px) rotate(2deg); }
+  60% { transform: translate(-3px, 4px) rotate(-1deg); }
+  80% { transform: translate(3px, -2px) rotate(1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.shake {
+  animation: shake 1s ease;
+}
+
+/* Fade-in for the answer */
+
+#messageField.hidden {
+  opacity: 0;
+}
+
+#msgYes {
+  color: #fff455;
+}
+
+.ans-0 {
+  color: rgba(255, 255, 255, 0.695); 
+   transform: translate(0%, 90%);
+
+}
+.ans-1 { 
+  color: rgba(255, 255, 255, 0.695); 
+   transform: translate(10%, 80%);
+ }
+.ans-2 { 
+  color: rgba(255, 255, 255, 0.695); 
+   transform: translate(-18%, 75%);
+
+ }
+.ans-3 { 
+  color: rgba(255, 255, 255, 0.695); 
+   transform: translate(-30%, 80%);
+
+ }
+ .ans-4 {
+   color: rgba(255, 255, 255, 0.695); 
+   transform: translate(-40%, 20%);
+   
+  }
+  
+  #messageBtn {
+    padding: 8px;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    color: #eee;
+    background-color: #560367bf;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+/* Layout container */
+#colorMixer {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;      /* Header on top */
+  gap: 0px;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+/* Header */
+#colorMixer h2 {
+  text-align: center;
+  margin: 0;
+}
+
+/* Three-column layout */
+#colorMixer .plusdiv,
+#colorMixer .previewdiv,
+#colorMixer .minusdiv {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+
+/* Put the three divs in a row */
+#colorMixer {
+  display: flex;
+  flex-direction: column;
+}
+
+#colorMixer > .plusdiv,
+#colorMixer > .previewdiv,
+#colorMixer > .minusdiv {
+  flex: 1;
+}
+
+/* Row wrapper for the three columns */
+#colorMixer {
+  display: flex;
+  flex-direction: column;
+}
+
+#colorMixer .plusdiv,
+#colorMixer .previewdiv,
+#colorMixer .minusdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Make the three divs sit side-by-side */
+#colorMixer {
+  display: flex;
+  flex-direction: column;
+}
+
+#colorMixer > div:not(:first-child) {
+  display: flex;
+}
+
+#colorMixer > div.plusdiv,
+#colorMixer > div.previewdiv,
+#colorMixer > div.minusdiv {
+  flex-direction: row;
+}
+
+/* Swatch buttons */
+.swatch {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Colors */
+.red { background: red; }
+.green { background: green; }
+.blue { background: blue; }
+
+/* Hide radios */
+input[type="radio"] {
+  display: none;
+}
+
+/* Preview box */
+#preview {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  background: rgb(0,0,0);
+}
+
+/* Three-column layout container */
+#colorMixerColumns {
+  display: flex;
+  width: 100%;
+  gap: 0px;
+}
+
+.hidden {
+  display: none;
+}

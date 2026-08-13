@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>KevInteractive Dashboard</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>KevInteractive Dashboard</h1>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="/Pages/FunctionsPageIndex/Functions.html" target="_blank" class="button">JavaScript</a>
+    <a href="/Pages/NeopetHub/NeopetHomepage.html" class="button">Neopet Hub</a>
+    <a href="/Pages/GameRoomIndex/GameRoom.html" class="button">Game Room</a>
+    <a href="/Pages/pagetemplate/pageTemplateOne.html" class="button">Page Builder</a>
+  </nav>
+
+  <!-- Clock -->
+  <div class="clock-container" id="clock"></div>
+
+  <main>
+
+    <!-- Building Tools -->
+    <section id="Building-Tools">
+      <h2>Building Tools</h2>
+      <a id="rainbow-boxes" href="Pages/DesignLayoutPage/RainbowPageDesigner.html" class="button" target="_blank">Rainbow layout designer</a>
+    </section>
+
+    <!-- Build Pages -->
+    <section id="Building-Pages">
+      <h2>Build Pages</h2>
+      <a href="/pages/gametools/canvas.html" class="button">Learning Canvas</a>
+      <a href="placeholder.html" class="button">script exercises</a>
+      <a href="/Pages/Pokemon/pokemon.html" class="button">Pokemon</a>
+      <a href="/Pages/Animation/index.html" class="button">Animation</a>
+    </section>
+
+    <!-- Random Elements -->
+    <section>
+      <h2>Warm-ups</h2>
+      
+     
+
+    </section> 
+
+    <!-- Plants -->
+    <section id="Plants-container">
+<h2>Message Feed</h2>
+    <input id="msgInput" placeholder="Type a message">
+<button id="sendMsg" class="button">Send</button>
+<div id="msgFeed"></div>
+    </section>
+
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p class="fauxbutton">Dashboard</p>
+  </footer>
+
+  <script src="/script.js">  </script>
+  <script>
+ 
+
+     function createPlayer(name) {
+  let score = 0; 
+return {
+    getName() {return name},
+    getScore() {return score;},
+    addPoint() {score++;},
+    reset() { score = 0; }
+  };
+}
+
+
+  </script>
+</body>
+</html>

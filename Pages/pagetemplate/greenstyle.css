@@ -1,0 +1,55 @@
+#row_1_wrap {
+  background-color: rgba(0, 0, 0, 0.521);
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+#row_2_wrap {
+  background-color: rgba(202, 202, 202, 0.521);
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+#row_3_wrap {
+  background-color: rgba(97, 173, 157, 0.521);
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.alpha {
+   border: 5px double rgb(179, 179, 179);
+   
+ }
+
+.section_type_alpha {
+  background-color: rgb(2, 56, 7);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.abox, .xbox {
+  background-color: black;
+  color: aliceblue;
+  height: 100px;
+  width: 100px;
+}
+
+.bbox .ybox{
+  background-color: aqua;
+  height: 100px;
+  width: auto;
+}
+
+.cbox .zbox{
+  background-color: aliceblue;
+  height: auto;
+  width: 100px;
+}
+
+.dbox {
+  background-color: blueviolet;
+  height: 200px;
+  min-width: 200px;
+  /* flex-grow: 1; */
+}
+  

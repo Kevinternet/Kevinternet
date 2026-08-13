@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!--header start-->
+<head><meta charset="utf-8">
+<title>Game 2</title>
+
+<link rel="stylesheet" href="simplecaves.css">
+</head>
+<!--header end-->
+
+
+
+<!--body start-->
+<body>
+
+
+
+
+
+
+
+  
+<!--main content start-->
+
+
+<h1>Simple Caves</h1>
+
+
+
+
+<div class="game-wrapper game-miss" id="game-board" >
+
+
+  <div id="game"></div>
+
+
+</div>
+
+
+<p class="instructions">Use the arrow keys to move the player around the "cave" <br>
+Goal: Collect all the hearts
+</p>
+
+
+
+<!--main content end-->
+
+
+
+
+
+
+<script>
+  
+// --- constants
+const cols = 5;
+const rows = 5;
+
+// --- build the 25 cells (unchanged)
+const game = document.getElementById("game");
+for (let i = 0; i < cols * rows; i++) {
+  const cell = document.createElement("div");
+  cell.classList.add("cell");
+  const row = Math.floor(i / cols);
+  const col = i % cols;
+  if ((row + col) % 2 === 0) cell.classList.add("light");
+  else cell.classList.add("dark");
+  game.appendChild(cell);
+}
+const cells = document.querySelectorAll("#game .cell");
+
+// --- player setup (unchanged)
+let playerIndex = 12; // center
+const player = document.createElement("div");
+player.classList.add("player");
+cells[playerIndex].appendChild(player);
+
+// --- spawnHeart now places hearts inside cells and stores index
+function spawnHeart() {
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.innerText = '❤️';
+
+  // pick a random empty cell index
+  let index;
+  do {
+    index = Math.floor(Math.random() * cols * rows);
+  } while (index === playerIndex || cells[index].querySelector('.heart'));
+
+  heart.dataset.index = index; // store index for easy comparison
+  cells[index].appendChild(heart);
+}
+
+// start with a few hearts
+for (let i = 0; i < 3; i++) spawnHeart();
+
+// --- collision check compares playerIndex to heart dataset
+function checkCollision() {
+  const heart = cells[playerIndex].querySelector('.heart');
+  if (heart) {
+    heart.remove();
+    console.log("Heart collected!");
+    // update score or spawn a new heart if you want
+    // spawnHeart();
+  }
+}
+
+// --- movement handler: update row/col, newIndex, move player, then check collision
+window.addEventListener("keydown", (e) => {
+  let row = Math.floor(playerIndex / cols);
+  let col = playerIndex % cols;
+
+  if (e.key === "ArrowUp" && row > 0) row--;
+  else if (e.key === "ArrowDown" && row < rows - 1) row++;
+  else if (e.key === "ArrowLeft" && col > 0) col--;
+  else if (e.key === "ArrowRight" && col < cols - 1) col++;
+  else return;
+
+  const newIndex = row * cols + col;
+
+  cells[playerIndex].removeChild(player);
+  playerIndex = newIndex;
+  cells[playerIndex].appendChild(player);
+
+  // <-- critical: check for collision right after moving
+  checkCollision();
+});
+
+
+</script>
+
+
+</body>
+<!--body end-->
+</html>

@@ -1,0 +1,246 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f2f4f7;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+/* HEADER */
+#headnavwrap {
+  display: flex;
+  border-bottom: 4px solid #d32f2f;
+}
+
+header {
+  background: #ef5350;
+  padding: 15px;
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  color: white;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+/* NAV */
+nav {
+  width: 15%;
+  background: #fff;
+  display: flex;
+  border-left: 4px solid #d32f2f;
+}
+
+nav a {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d32f2f;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: #ffe5e5;
+}
+
+/* MAIN TEAM GRID */
+main {
+  padding: 20px;
+  margin-right: 120px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 275px);
+  gap: 25px;
+  justify-content: center;
+}
+
+/* CARD WRAPPER */
+.placeholderAlpha {
+  background: #ffffff;
+  border: 2px solid #90caf9;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  height: auto;
+  width: 275px;
+}
+
+/* CARD */
+.pokemon-card {
+  width: 100%;
+  padding: 10px;
+  display: grid;
+
+  /* CORRECT ROW ORDER */
+  grid-template-rows:
+    40px   /* header */
+    100px  /* image */
+    80px   /* stats */
+    80px   /* moves */
+    25px   /* ability */
+    25px;  /* nature */
+
+  gap: 8px;
+  background: #e3f2fd;
+  border-radius: 10px;
+  border: 2px solid #64b5f6;
+  overflow: visible;
+  
+}
+
+/* HEADER */
+.poke-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  color: #1e88e5;
+}
+
+/* IMAGE */
+.poke-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.poke-image img {
+  height: 90px;
+  width: 90px;
+  object-fit: contain;
+}
+
+/* STATS */
+.poke-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  color: #1e88e5;
+}
+
+/* MOVES */
+.poke-moves {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.move-slot {
+  background: #fff;
+  border: 1px solid #64b5f6;
+  border-radius: 6px;
+  padding: 4px;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ABILITY + NATURE */
+.poke-ability,
+.poke-nature {
+  text-align: center;
+  color: #1e88e5;
+}
+
+.nature-slot {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* GLOBAL SELECT FIX */
+select {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  right: -180px; /* hidden by default */
+  top: 120px;
+  width: 200px;
+  background: #ffffff;
+  border-left: 3px solid #90caf9;
+  box-shadow: -2px 0 6px rgba(0,0,0,0.15);
+  transition: right 0.3s ease;
+  border-radius: 10px 0 0 10px;
+}
+
+/* Sidebar visible */
+.sidebar.open {
+  right: 0;
+}
+
+/* Toggle button attached to sidebar */
+.sidebar-toggle {
+  position: absolute;
+  left: -80px;
+  top: 0;
+  height: 40px;
+  width: 80px;
+  background: #ef5350;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px 0 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: -2px 0 6px rgba(0,0,0,0.15);
+  transition: 0.2s;
+}
+
+.sidebar-toggle:hover {
+  background: #d32f2f;
+}
+
+.sidebar-content {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* two columns */
+  gap: 20px;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+}
+
+
+/* Pokémon icons */
+.pokemon-icon {
+  height: 70px;
+  width: 70px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.pokemon-icon:hover {
+  transform: scale(1.1);
+}
+
+.mega-toggle {
+  background: #d40707;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+}
+
+.mega-toggle.active {
+  background: #960303;
+}

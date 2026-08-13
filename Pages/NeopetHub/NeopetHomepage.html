@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+
+<header class="box ghost">
+<img src="images/Leftupdate2.PNG" class="vine" alt="Left Vine">
+
+  <div class="header-center">
+    <div class="logo_div">
+      <img src="images/logoupdate2.PNG" class="centerlogo" alt="Logo of a sunflower with initials KC">
+    </div>
+    <div class="tagline_div"></div>
+  </div>
+
+  <img src="images/Rightupdate2.PNG" class="vine" alt="Right Vine">
+</header>
+
+
+<!-- Nav -->
+
+<nav class="box">
+  <a class="navbutton" id="navbutton4" href="/index.html">Home</a> 
+  <a class="navbutton" id="navbutton1" href="/Pages/GameRoomIndex/GameRoom.html">Gameroom</a>
+  <a class="navbutton" id="navbutton2" href="/Pages/FunctionsPageIndex/Functions.html">JavaScript</a>
+  <a class="navbutton" id="navbutton3" href="/Pages/pagetemplate/pageTemplateOne.html">Page Designer</a>
+</nav>
+
+
+<!-- Main -->
+<div class="content-wrapper">
+  <main class="box">
+    <a href="/Pages/NeopetHub/Stats.html" class="navbutton button">Neopet Stats</a>
+    <a href="/Pages/NeopetHub/BattledomeItems.html" class="navbutton button">Battledome Items Tracker</a>
+    <a href="/pages/NeopetHub/HauntedWoods.html" class="navbutton button">Haunted Woods page</a>
+  </main>
+<!-- aside (wrapped with main) -->
+  <aside class="box fourth">
+
+<input id="todo-input" placeholder="Add a task">
+<button id="add-btn">Add</button>
+
+<ul id="todo-list"></ul>
+
+
+
+</aside>
+</div>
+
+<!-- Footer -->
+
+<footer class="standalone box footer">
+  <img src="images/Leftupdate2.PNG" class="vine" alt="Left Vine">
+  <div class="footer-center">
+    <img src="images/logoupdate2.PNG" class="centerlogo" alt="Logo of a sunflower">
+  </div>
+  <div class="tagline_div"></div>
+  <img src="images/Rightupdate2.PNG" class="vine" alt="Right Vine">
+
+  </footer>
+  
+  <script src="script.js"></script>
+
+  <script>
+
+    const list = document.querySelector('#todo-list');
+function createTodo(text) {
+  const li = document.createElement('li');
+
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+
+  const span = document.createElement('span');
+  span.textContent = text;
+
+  const editBtn = document.createElement('button');
+  editBtn.textContent = '✏️';
+
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = '🗑️';
+
+  li.appendChild(checkbox);
+  li.appendChild(span);
+  li.appendChild(editBtn);
+  li.appendChild(deleteBtn);
+
+  // checkbox logic
+  checkbox.addEventListener('click', () => {
+    li.classList.toggle('completed');
+  });
+
+  // edit logic
+  editBtn.addEventListener('click', () => {
+    const editInput = document.createElement('input');
+    editInput.value = span.textContent;
+
+    li.replaceChild(editInput, span);
+    editInput.focus();
+
+    editInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        span.textContent = editInput.value;
+        li.replaceChild(span, editInput);
+      }
+    });
+  });
+
+  // delete logic
+  deleteBtn.addEventListener('click', () => {
+    li.remove();
+  });
+
+  return li;
+}
+
+const starterTasks = [
+  "Purchase an Item",
+  "Go Fishing",
+  "Read to a Pet",
+  "Fight in the Battledome",
+  "Omelette",
+  "Jelly",
+  "Play a Game",
+  "Go to the NC Mall",
+  "Spin the Wheel",
+  "Trudy's Surprise",
+  "App Rewards",
+  "Groom a Pet",
+  "Blue Grundo",
+  "Bank Interest",
+  "Feed Pet",
+  "Play with Pet",
+  "Scratch, Off",
+  "Customize",
+  "Work",
+  "Brain Tree",
+  "Desert",
+  "Training School"
+
+
+];
+
+starterTasks.forEach(task => {
+  const li = createTodo(task);
+  list.appendChild(li);
+});
+
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,282 @@
+/* Basic styles for the body */
+* { 
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: #222;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: rgb(70, 71, 72); /* Sets the background color of the page */
+    color: rgb(252, 252, 252); /* Sets the color of the text */
+    font-family: Arial, sans-serif; /* Sets the font of the text */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header and footer styles */
+header, footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+p {padding: 10px 20px;
+    background-color: rgb(74, 83, 107); /* navy blue */
+    color: rgb(3, 3, 3); /* turquoise */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the link look like a button */
+    text-align: center;
+}
+
+/* Navigation styles */
+nav {
+  background-color: #6f6f6f;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
+  border: 3px solid #000;
+}
+
+
+nav a {
+    /* margin: 0 10px; */
+    text-decoration: none;
+    color: #cccccc;
+    font-weight: bold;
+}
+
+.button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Main content styles */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+
+section {
+    background-color: #8f9eadb5;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    margin: 1em;
+    padding: 1.5em;
+    flex: 1 1 calc(45% - 2em);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+section h2 {
+    border-bottom: 2px solid #000000;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    color: #000000;
+}
+
+/* Stats container and form styles */
+#stats-container,
+#inventory-container,
+#quests-container,
+#transactions-container {
+    width: 90%;
+    padding: 1em;
+    background-color: #86949ecd;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+}
+/* date and time styles */
+.section datetime-container {
+    width: fit-content;
+    display: flex;
+    justify-content: flex-end;
+    align-items: left;
+    margin: 0px;
+    padding: 15 px;
+}
+
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+form input, form button {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form button {
+    background-color: #2290b8;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+form button:hover {
+    background-color: #1b93f5;
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        padding: 1em;
+    }
+
+    section {
+        flex: 1 1 100%;
+    }
+}
+
+/* Add this to your styles.css */
+.button {
+    padding: 10px 20px;
+    background-color: rgb(74, 83, 107); /* navy blue */
+    color: rgb(3, 3, 3); /* turquoise */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the link look like a button */
+    text-align: center;
+}
+
+.button:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+    body {
+            margin: 0;
+            background-color: #222;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .clock-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            font-size: 24px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        .full-width {
+  width: 100%;
+  max-width: 100%;
+}
+
+.card-width {
+  width: 350px;
+  flex: 1 1 350px;
+}
+.star {
+  font-size: 24px;
+  color: gold;
+  margin: 4px;
+}
+
+
+#msgFeed {
+  color: #000000;
+  background: #f8f8f8;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 120px;
+  max-height: 300px;
+  overflow-y: auto;
+  font-family: sans-serif;
+  margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  width: 100%;
+  max-width: 400px;
+  min-height: 120px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+
+#msgFeed p {
+  margin: 6px 0;
+  padding: 6px 10px;
+  background: #fff;
+  border-radius: 4px;
+  animation: fadeIn 0.2s ease-out;
+  display: flex;
+  
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* temp below */
+
+#box {
+  width: 100px;
+  height: 100px;
+  background: hotpink;
+  transition: transform 0.4s ease, background 0.4s ease;
+}
+
+#box.active {
+  transform: scale(1.4) rotate(10deg);
+  background: lime;
+}
+
+#floatBtn {
+  padding: 12px 20px;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#floatBtn.floating {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+}
+
+li {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 1s ease, transform 0.4s ease;
+}
+
+li.show {
+  opacity: 1;
+  transform: translateY(0);
+}

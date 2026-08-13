@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding Simple Games</title>
+  <link href="placeholder.css" rel="stylesheet"> 
+</head>
+
+<body>
+  
+  <header>
+    <h1>More Javascript Challenges </h1>
+  </header>
+  
+  <nav>
+    <a href="/index.html">HOME</a>
+    <a href="/Pages/FunctionsPageIndex/Functions.html">JAVASCRIPT</a>
+    <a href="/Pages/NeopetHub/NeopetHomepage.html">Neopets Homepage</a>
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+  </nav>
+  
+  <div id="contentWrap">
+    
+    <main>
+
+      <!-- Magic 8 Ball -->
+
+
+      
+      
+      <section style="background-color: rgb(0, 0, 0); ">
+        <h2 class='eightballHeader'>Ask a question...</h2>
+        <div id="eightballimgdiv">
+          
+          <p id="messageField"></p><br>
+          
+          <img src="/images/magic8ball.png" id="eightballImage">
+          
+        </div>
+        <div class="buttondiv">
+          <button id="messageBtn">...Get Your Answer</button>
+        </div>
+      </section>
+
+
+
+      <!-- Color Mixer -->
+          
+              <section id="colorMixer">
+        <h2>Mix Some Colors</h2>
+      <div class="plusdiv">
+        <label>
+          <input type="radio" name="color" id="c-red">
+          <span class="swatch red">+</span>
+        </label>
+        
+        <label>
+          <input type="radio" name="color" id="c-green">
+          <span class="swatch green">+</span>
+        </label>
+        
+        <label>
+          <input type="radio" name="color" id="c-blue">
+          <span class="swatch blue">+</span>
+        </label>
+      </div>
+        
+      
+      <div class="previewdiv">
+      <div id="preview"></div>
+      </div>
+      
+      
+      
+      <div class="minusdiv">
+        <label>
+          <input type="radio" name="color" id="c-redm">
+          <span class="swatch red">-</span>
+        </label>
+        
+        <label>
+          <input type="radio" name="color" id="c-greenm">
+          <span class="swatch green">-</span>
+        </label>
+        
+        <label>
+          <input type="radio" name="color" id="c-bluem">
+          <span class="swatch blue">-</span>
+        </label>
+      </div>
+        
+      
+            </section>
+
+
+            <!-- Whiteboard Section -->
+            <section>
+            <!--  -->
+              <button id="countWB">Click me</button>
+              <p id="displayWB">0</p>
+              <!--  --> 
+  </section>
+              <!--  -->
+   
+            </section>
+            <!--  -->
+
+
+            <!-- Stats -->
+            <section>
+              <h2>Player Stats</h2>
+              
+              <p>Name: <span id="playerName">Kevin</span></p>
+              <p>Level: <span id="playerLevel">1</span></p>
+              <p>XP: <span id="playerXp">0</span></p>
+              
+              <button id="gainXpBtn">Gain XP</button>
+              <h2>Dice Roller</h2>
+              
+              <button id="rollBtn">Roll Dice</button>
+              <p id="diceResult"></p>
+              <h2>Health System</h2>
+              
+              <p>HP: <span id="hpDisplay">100</span></p>
+              
+              <button id="damageBtn">Take Damage</button>
+              <button id="healBtn">Heal</button>
+              <button id="resetHpBtn">Reset HP</button>
+              <h2>Enemy Encounter</h2>
+              
+              <button id="enemyBtn">Find Enemy</button>
+              <p id="enemyDisplay"></p>
+            </section>
+            
+            <!-- Msg Feed -->
+            
+
+      <section>
+        <h2>Message Feed</h2>
+
+        <input id="msgInput" placeholder="Type a message">
+        <select id="msgType">
+          <option value="normal">Normal</option>
+          <option value="warning">Warning</option>
+          <option value="success">Success</option>
+        </select>
+        <button id="send">Send</button>
+
+        <div id="feed"></div>
+      </section>
+<!-- Spin and Grow Box -->
+      <section>
+        <br><button id="growB">Hold to grow</button>
+        <button id="spined">spin</button>
+        <div id="square" style="width:50px;height:50px;background:black;"></div>
+        
+      </section>
+      <!-- Section 3 -->
+      <section>
+        <h2>Random Pokémon</h2>
+        <button id="sendLogNames">Console Log a Pokémon</button>
+        <h2>Timer</h2>
+        <button id="timer">Start Timer</button>
+        <p>*note this is a console event*</p>
+      <!-- function B -->
+       
+      <h2>Menu Click Test</h2>
+      <ul id="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+
+      
+      
+      </section>
+
+      <section>
+</section>
+
+
+<section>
+  <h2>Counter</h2>
+  <p id="countDisplay">0</p>
+  <button id="countBtn">Add 1</button>
+  <button id="resetBtn">Reset</button> <br>
+  <button id="hold">Hold to add</button>
+<p id="numSix">0</p>
+
+
+</section>
+<section>
+
+
+      </section>
+      <section>
+        <!-- one -->
+        <h2>Toggle Panel</h2>
+        <button id="toggle">Toggle</button>
+        <div id="panel">Hello</div>
+        <!-- two -->
+        <button id="fade">Hold to fade</button>
+        <p id="msg" style="opacity:1;">Hello!</p>
+        <!-- three -->
+        <button id="red">Red</button>
+        <button id="blue">Blue</button>
+        
+        <div id="boxChange" style="width:100px;height:100px;background:gray;"></div>
+      </section>
+      
+      
+      <section>
+        
+        
+        
+        <h2>Making Tiles/ Delegation</h2>
+        <div id="tileArea"></div>
+        <button id="makeTiles">Make Tiles</button>
+        
+        <div id="tileAreaTwo"></div>
+        <button id="makeTilesTwo">Make Tiles Two</button>
+        <button id="clearTiles">clear</button>  
+        
+        
+      </section>
+      <section>
+        <h2>Live Preview</h2>
+        <input id="inputLive" placeholder="Mirrored Chat">
+        <div id="previewArea"></div>
+        
+        
+      </section>
+      <section>
+        <h2>Slider Text</h2>
+        <input type="range" id="slider" name="size" min="5" max="50" value="20" step="1">
+        <p id="slideText">This Text Changes Size</p>
+      </section>
+      
+      <section>
+        <h2>Adding to a List</h2>
+        <input id="appendInput" placeholder="item">
+        <button id="appendBtn">add</button>
+        <button id="appendClear">clear</button>
+        <ul id="appendList">
+        </ul>
+        
+      </section>
+      <section>
+
+        <h2>Inventory</h2>
+        
+        <input id="itemInput" placeholder="Item name">
+        <button id="addItemBtn">Add Item</button>
+        
+        <ul id="inventoryList"></ul>
+      </section>
+      
+    </main>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <aside>
+      <p>Sidebar content</p>
+    </aside>
+
+  </div>
+
+  <footer>
+    <button id="appendSection">add section</button>
+  </footer>
+
+
+
+<script src="placeholder.js"></script>
+
+
+
+
+<script>
+//helper function
+
+function $(selector) {
+  return document.querySelector(selector);
+};
+
+  //end
+ 
+  
+
+    
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Game 4 – FourFun</title>
+  <link rel="stylesheet" href="stylesforfun.css">
+</head>
+<body>
+  <h1>Game 4 – FourFun</h1>
+
+  <div id="player" class="player-hitbox">
+  <img src="/Pages/GameRoomIndex/Game4/imagesfourfun/player.png" class="player-sprite">
+</div>
+
+  <main class="game4-wrapper">
+    <div id="gameGrid" class="game-grid">
+      <!-- Tiles will be created by JS -->
+       <div class="game-grid">
+</div>
+
+</div>
+
+    </div>
+  </main>
+  <script>
+  const player = document.getElementById("player");
+  let dragging = false;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  player.addEventListener("mousedown", (e) => {
+    dragging = true;
+    offsetX = e.clientX - player.offsetLeft;
+    offsetY = e.clientY - player.offsetTop;
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (!dragging) return;
+    player.style.left = (e.clientX - offsetX) + "px";
+    player.style.top = (e.clientY - offsetY) + "px";
+  });
+
+  document.addEventListener("mouseup", () => {
+    dragging = false;
+  });
+</script>
+
+  <script>
+  const player = document.getElementById("player");
+
+  player.addEventListener("click", () => {
+    console.log("Player clicked!");
+  });
+</script>
+
+
+  <script src="scriptsforfun.js"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Player Movement Demo</title>
+<style>
+  html,body { height:100%; margin:0; background:#111; }
+  #world {
+    position:relative;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+  }
+  .brick {
+  position:absolute;
+  width:100px;
+  height:100px;
+}
+
+  #ground {
+    position:absolute;
+    left:0;
+    right:0;
+    height:120px;
+    bottom:0;
+    background:#2b2b2b;
+    border-top:4px solid #444;
+  }
+  #player {
+    position:absolute;
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    background:linear-gradient(#6fe, #0cc);
+    border:3px solid teal;
+    box-sizing:border-box;
+    left:20px;
+    top:0;
+    transform:translateZ(0);
+  }
+  /* small HUD */
+  .hint { position:fixed; left:12px; top:12px; color:#ddd; font-family:system-ui; font-size:13px; }
+</style>
+</head>
+<body>
+<div id="world">
+  <div id="player" aria-hidden="true"></div>
+  <img src="/Pages/GameRoomIndex/Game 1/scoreImages/brickOne.png" class="brick" style="left:300px; top:736px;">
+
+  <div id="ground"></div>
+</div>
+<div class="hint">Arrows: move • Up: jump</div>
+
+<script>
+/* --- Config --- */
+const PLAYER_W = 80;
+const PLAYER_H = 80;
+const GROUND_Y_FROM_BOTTOM = 120; // ground element height
+const MOVE_SPEED = 4;
+const JUMP_FORCE = 18;      // initial upward velocity
+const GRAVITY_ACCEL = 0.8;  // acceleration per frame
+const TERMINAL_V = 30;
+
+/* --- Elements & initial state --- */
+const playerEl = document.getElementById('player');
+const groundEl = document.getElementById('ground');
+
+let playerX = 20;
+let playerY = 100; // start above ground
+let vy = 0;        // vertical velocity
+let grounded = false;
+
+const movementState = { left:false, right:false, jump:false };
+
+/* --- Gravity closure (keeps frozen state private) --- */
+const Gravity = (function () {
+  let frozen = false;
+  const g = GRAVITY_ACCEL;
+
+  // apply returns the new vertical velocity after gravity
+  function apply(currentVy) {
+    if (frozen) return currentVy;
+    // accelerate downward, clamp to terminal velocity
+    const next = Math.min(currentVy + g, TERMINAL_V);
+    return next;
+  }
+
+  function freeze() { frozen = true; }
+  function resume() { frozen = false; }
+  function isFrozen() { return frozen; }
+
+  return { apply, freeze, resume, isFrozen };
+})();
+
+/* --- Input --- */
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') { movementState.left = true; e.preventDefault(); }
+  if (e.key === 'ArrowRight') { movementState.right = true; e.preventDefault(); }
+  if (e.key === 'ArrowUp') {
+    if (!movementState.jump) {
+      movementState.jump = true;
+      // trigger jump attempt on keydown (single press)
+      tryJump();
+    }
+    e.preventDefault();
+  }
+});
+
+document.addEventListener('keyup', (e) => {
+  if (e.key === 'ArrowLeft') movementState.left = false;
+  if (e.key === 'ArrowRight') movementState.right = false;
+  if (e.key === 'ArrowUp') movementState.jump = false;
+});
+
+/* --- Jump logic (separate from gravity) --- */
+function tryJump() {
+  if (grounded) {
+    // give an initial upward velocity
+    vy = -JUMP_FORCE;
+    grounded = false;
+    // optional: briefly freeze gravity for a frame or two to make jump snappier
+    // Gravity.freeze();
+    // setTimeout(() => Gravity.resume(), 30);
+  }
+}
+
+/* --- Collision with ground --- */
+function applyGroundCollision() {
+  const worldHeight = document.documentElement.clientHeight;
+  const groundTop = worldHeight - GROUND_Y_FROM_BOTTOM; // y coordinate of ground top
+  const playerBottom = playerY + PLAYER_H;
+
+  if (playerBottom >= groundTop) {
+    // clamp to ground
+    playerY = groundTop - PLAYER_H;
+    vy = 0;
+    grounded = true;
+  } else {
+    grounded = false;
+  }
+}
+
+// brick collision
+
+function applyBrickCollision() {
+  const bricks = document.querySelectorAll('.brick');
+
+  bricks.forEach(brick => {
+    const rect = brick.getBoundingClientRect();
+
+    const top = rect.top;
+    const left = rect.left;
+    const right = rect.left + rect.width;
+    const bottom = rect.top + rect.height;
+
+    const playerBottom = playerY + PLAYER_H;
+    const playerRight = playerX + PLAYER_W;
+
+    if (playerBottom >= top && playerBottom <= top + 20 &&
+        playerX < right && playerRight > left && vy >= 0) {
+
+      playerY = top - PLAYER_H;
+      vy = 0;
+      grounded = true;
+    }
+  });
+}
+
+
+/* --- Render --- */
+function renderPlayer() {
+  playerEl.style.left = Math.round(playerX) + 'px';
+  playerEl.style.top = Math.round(playerY) + 'px';
+}
+
+/* --- Main loop --- */
+function movementLoop() {
+  // horizontal input
+  if (movementState.left) playerX -= MOVE_SPEED;
+  if (movementState.right) playerX += MOVE_SPEED;
+
+  // apply gravity
+  vy = Gravity.apply(vy);
+
+  // integrate velocity
+  playerY += vy;
+
+  // collision
+  applyGroundCollision();
+  applyBrickCollision();   // ← YOU FORGOT THIS
+
+  // horizontal bounds
+  const maxX = Math.max(0, document.documentElement.clientWidth - PLAYER_W);
+  if (playerX < 0) playerX = 0;
+  if (playerX > maxX) playerX = maxX;
+
+  renderPlayer();
+  requestAnimationFrame(movementLoop);
+}
+
+/* --- Initialize position and start --- */
+function init() {
+  // place player a bit above ground
+  const worldHeight = document.documentElement.clientHeight;
+  playerY = worldHeight - GROUND_Y_FROM_BOTTOM - PLAYER_H;
+  renderPlayer();
+  requestAnimationFrame(movementLoop);
+}
+
+window.addEventListener('load', init);
+window.addEventListener('resize', () => {
+  // keep player on-screen after resize
+  const maxX = Math.max(0, document.documentElement.clientWidth - PLAYER_W);
+  if (playerX > maxX) playerX = maxX;
+});
+</script>
+</body>
+</html>

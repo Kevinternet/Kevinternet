@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>UI Animation Practice Sandbox</h1>
+
+  <!-- Buttons -->
+  <div class="section">
+    <h2>Buttons</h2>
+    <button class="ui-btn">Primary Button</button>
+    <button class="ui-btn secondary">Secondary Button</button>
+    <button class="ui-btn danger run">Danger Button</button>
+  </div>
+
+  <div class="section">
+  <h2>Animation Library Buttons</h2>
+
+  <button class="lib-btn wiggle">Wiggle</button>
+  <button class="lib-btn shake">Shake</button>
+  <button class="lib-btn pulse">Pulse</button>
+  <button class="lib-btn jitter">Jitter</button>
+  <button class="lib-btn pop">Pop</button>
+  <button class="lib-btn flip">Flip</button>
+</div>
+
+
+  <!-- Cards -->
+  <div class="section">
+    <h2>Cards</h2>
+    <div class="card">This is a card.</div>
+    <div class="card">Another card.</div>
+    <div class="card">Card #3</div>
+  </div>
+
+  <!-- Toggles -->
+  <div class="section">
+    <h2>Toggles</h2>
+    <div class="toggle">OFF</div>
+  </div>
+
+  <!-- Panels -->
+  <div class="section">
+    <h2>Panels</h2>
+    <div class="panel">
+      <h3>Panel Title</h3>
+      <p>This is a collapsible panel.</p>
+    </div>
+  </div>
+
+  <!-- Text Blocks -->
+  <div class="section">
+    <h2>Text Blocks</h2>
+    <div class="text-block">Click me</div>
+  </div>
+  <script>
+    // Buttons
+document.querySelectorAll('.ui-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    console.log('Button clicked:', btn.textContent);
+  });
+});
+
+// Toggle
+const toggle = document.querySelector('.toggle');
+toggle.addEventListener('click', () => {
+  const isOn = toggle.textContent === 'ON';
+  toggle.textContent = isOn ? 'OFF' : 'ON';
+  toggle.style.backgroundColor = isOn ? '#bbb' : '#4caf50';
+});
+
+// Panel (expand/collapse)
+const panel = document.querySelector('.panel');
+panel.addEventListener('click', () => {
+  panel.classList.toggle('open');
+});
+
+// Text Block
+const textBlock = document.querySelector('.text-block');
+textBlock.addEventListener('click', () => {
+  textBlock.classList.toggle('active');
+});
+
+
+const secondaryBtn = document.querySelector('.ui-btn.secondary');
+
+secondaryBtn.addEventListener('click', () => {
+  secondaryBtn.classList.remove('clicked');
+
+  // Force reflow
+  void secondaryBtn.offsetWidth;
+
+  secondaryBtn.classList.add('clicked');
+});
+
+document.querySelectorAll('.lib-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+
+    if (btn.classList.contains('animate')) {
+      // Remove animation class
+      btn.classList.remove('animate');
+      return;
+    }
+
+    // Add animation class (with restart)
+    btn.classList.remove('animate');
+    void btn.offsetWidth; // force reflow
+    btn.classList.add('animate');
+  });
+});
+
+const danger = document.querySelector('.run');
+
+danger.addEventListener('click', () => {
+
+  // If danger class is present → remove it
+  if (danger.classList.contains('danger')) {
+    danger.classList.remove('danger');
+    danger.textContent = "Safe"
+    return;
+  }
+
+  // If danger class is NOT present → add it AND restart animation
+  danger.classList.remove('danger');   // clear old animation
+  void danger.offsetWidth;             // force reflow
+  danger.classList.add('danger');      // restart animation
+  danger.textContent = 'Danger';
+});
+
+////
+
+function double(x) {
+  return x * 2;
+}
+
+function square(x) {
+  return x * x;
+}
+
+
+
+  </script>
+
+</body>
+
+</html>
+<header>
